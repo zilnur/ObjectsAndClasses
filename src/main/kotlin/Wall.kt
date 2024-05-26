@@ -16,9 +16,11 @@ object Wall {
         println("Update")
         posts.withIndex().forEach { (index, value) ->
             print(value.id)
-            if (value.id == post.id) {
+            result = if (value.id == post.id) {
                 posts[index] = post
-                result = true
+                true
+            } else {
+                false
             }
         }
         return result
