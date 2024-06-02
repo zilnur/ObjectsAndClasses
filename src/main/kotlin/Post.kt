@@ -6,9 +6,10 @@ data class Post(
     val formId: Int,
     val createdBy: Int,
     val date: Int,
-    val text: String,
+    val text: String?,
     val replyOwnerId: Int,
     val replyPostId: Int,
     val friendsOnly: Boolean,
-    val comments: Comment
+    val comments: Comment?,
+    val attachements: Array<Attachements>?
 )
