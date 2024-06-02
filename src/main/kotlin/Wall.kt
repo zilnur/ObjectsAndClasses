@@ -1,6 +1,7 @@
 object Wall {
 
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
     private var lastId = 0
 
     fun add(post: Post): Post {
@@ -26,4 +27,13 @@ object Wall {
         posts = emptyArray()
         lastId = 0
     }
+
+     fun createComment(postId: Int, comment: Comment): Comment {
+         if (posts.any {it.id == postId}) {
+             comments += comment
+             return comment
+         } else {
+             throw PostNotFoundException("Не найдет указанный пост")
+         }
+     }
 }
